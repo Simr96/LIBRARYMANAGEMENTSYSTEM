@@ -352,7 +352,7 @@ class LibraryManagementSystem:
         self.mydataa_table.bind("<ButtonRelease-1>", self.get_cursor)
 
     def adda_data(self):
-        conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql@03", database="mydata")
+        conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql03", database="mydata")
         cursor = conn.cursor()
         cursor.execute("insert into mydataa values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                                                                                                 self.member_var.get(),
@@ -378,7 +378,7 @@ class LibraryManagementSystem:
         messagebox.showinfo("successbox","successfully added")
 
     def fetch_data(self):
-        conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql@03", database="mydata")
+        conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql03", database="mydata")
         cursor = conn.cursor()
         cursor.execute("select * from mydataa")
         rows = cursor.fetchall()
@@ -449,7 +449,7 @@ class LibraryManagementSystem:
 
     def update(self):
 
-        conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql@03", database="mydata")
+        conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql03", database="mydata")
 
         cursor = conn.cursor()
         cursor.execute("update mydataa set member=%s,firstname = %s, lastname =%s, title =%s, address1 =%s, address2=%s,postcode=%s,mobile=%s,bookid=%s,booktitle=%s,author=%s, dateborrowed=%s where prnno = %s",(
@@ -479,7 +479,7 @@ class LibraryManagementSystem:
         if self.prnno_var.get() == "" or self.title_var.get()=="":
             messagebox.showerror("error", "first select member")
         else:
-            conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql@03", database="mydata")
+            conn = mysql.connector.connect(host="localhost", username = "simran",password = "Mysql03", database="mydata")
             cursor = conn.cursor()
             query = "delete from mydataa where prnno = %s"
             value = (self.prnno_var.get(),)
